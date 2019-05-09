@@ -1,30 +1,33 @@
 <template>
-    <div class="helper">
-        <span class="left">{{unFinishedTodoLength}} 条待办事项</span>
-        <span class="tabs">
-        <span
-            v-for="state in states"
-            :key="state"
-            :class="[state, filter === state ? 'actived' : '']"
-            @click="toggleFilter(state)"
-        >
-            {{state}}
-        </span>
-        </span>
-        <span class="clear" @click="clearAllCompleted">清除已完成事项</span>
-    </div>
+  <div class="helper">
+    <span class="left">{{ unFinishedTodoLength }} 条待办事项</span>
+    <span class="tabs">
+      <span
+        v-for="state in states"
+        :key="state"
+        :class="[state, filter === state ? 'actived' : '']"
+        @click="toggleFilter(state)"
+      >
+        {{ state }}
+      </span>
+    </span>
+    <span
+      class="clear"
+      @click="clearAllCompleted"
+    >清除已完成事项</span>
+  </div>
 </template>
 
 <script>
 export default {
     props: {
         filter: {
-        type: String,
-        required: true,
+            type: String,
+            required: true,
         },
-    todos: {
-        type: Array,
-        required: true,
+        todos: {
+            type: Array,
+            required: true,
         }
     },
     data() {

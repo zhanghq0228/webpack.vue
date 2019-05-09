@@ -1,25 +1,24 @@
 <template>
   <div id="app">
     <div id="cover">
-      <Header></Header>
-      <Todo></Todo>
-      <Footer></Footer>
+      <Header />
+      <Todo />
+      <Footer />
     </div>
-
   </div>
 </template>
 
 <script>
-import Header from "./layout/header.vue";
+import Header from "./layout/header";
 import Footer from "./layout/footer.vue";
 import Todo from "./views/todo/todo.vue";
 
 export default {
-  components: {
-    Header,
-    Footer,
-    Todo
-  }
+    components: {
+        Header,
+        Footer,
+        Todo
+    }
 };
 </script>
 
