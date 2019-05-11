@@ -41,8 +41,7 @@ config = merge(baseConfig, {
     },
     devServer,
     plugins: defaultPluins.concat([
-        new webpack.HotModuleReplacementPlugin(),
-    // new webpack.NoEmitOnErrorsPlugin()
+        new webpack.HotModuleReplacementPlugin()
     ])
 })
 
