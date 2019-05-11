@@ -1,25 +1,25 @@
 <template>
-    <section class="real-app">
-        <input
-            type="text"
-            class="add-input"
-            autofocus="autofocus"
-            placeholder="记录待办事项"
-            @keyup.enter="addTodo"
-        >
-        <item
-            :todo="todo"
-            v-for="todo in filteredTodos"
-            :key="todo.id"
-            @del="deleteTodo"
-        />
-        <tabs
-            :filter="filter"
-            :todos="todos"
-            @toggle="toggleFilter"
-            @clearAllCompleted="clearAllCompleted"
-        />
-    </section>
+  <section class="real-app">
+    <input
+      type="text"
+      class="add-input"
+      autofocus="autofocus"
+      placeholder="记录待办事项"
+      @keyup.enter="addTodo"
+    >
+    <item
+      v-for="todo in filteredTodos"
+      :key="todo.id"
+      :todo="todo"
+      @del="deleteTodo"
+    />
+    <tabs
+      :filter="filter"
+      :todos="todos"
+      @toggle="toggleFilter"
+      @clearAllCompleted="clearAllCompleted"
+    />
+  </section>
 </template>
 
 <script>
@@ -27,15 +27,15 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
+    components: {
+        Item,
+        Tabs,
+    },
     data() {
         return {
             todos: [],
             filter: '全部'
         }
-    },
-    components: {
-        Item,
-        Tabs,
     },
     computed: {
         filteredTodos() {
@@ -53,10 +53,10 @@ export default {
                 content: e.target.value.trim(),
                 completed: false
             })
-             e.target.value = ''
+            e.target.value = ''
         },
         deleteTodo(id) {
-             this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
+            this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
         },
         toggleFilter(state) {
             this.filter = state
