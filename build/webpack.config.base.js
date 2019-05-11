@@ -5,7 +5,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HTMLPlugin = require('html-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 
-
 const config = {
   mode: process.env.NODE_EN || 'production',
   target: 'web',
@@ -41,6 +40,13 @@ const config = {
         }]
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src')
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
