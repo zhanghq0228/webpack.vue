@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Header from "./layout/header";
+import Header from "./layout/header.vue";
 import Footer from "./layout/footer.vue";
 import Todo from "./views/todo/todo.vue";
 
@@ -37,7 +37,6 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: #BDFCC9;
   opacity: 0.7;
   z-index: -1;
 }

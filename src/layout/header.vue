@@ -10,7 +10,7 @@
     text-align center
     h1{
         font-size 100px;
-        color: #3D59AB;
+        color: red;
         font-weight 200;
         margin 20px;
     }
