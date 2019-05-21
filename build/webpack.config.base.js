@@ -3,7 +3,7 @@ const vueLoaderOptions = require('./vue-loader.config')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HTMLPlugin = require('html-webpack-plugin')
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
@@ -27,7 +27,7 @@ const config = {
                 test: /\.vue$/,
                 use: {
                     loader: 'vue-loader',
-                    options: vueLoaderOptions(isDev)
+                    options: vueLoaderOptions(false)
                 }
             },
             {

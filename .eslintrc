@@ -8,7 +8,7 @@
     "html/html-extensions": [".html"]
   },
   "globals": {
-    "axios": true,
+    "axios": false,
     "elastic": true
   },
   "extends": [
@@ -36,7 +36,10 @@
     "no-dupe-args": "error",
     "no-duplicate-case": "error",
     "no-duplicate-imports": "error",
-    "no-empty": "error"
+    "no-empty": "error",
+    "no-new":"off",
+    "no-console":"off",
+    "no-unused-vars":"off"
   },
   "env": {
     "browser": true,

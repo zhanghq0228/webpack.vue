@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.config.base.js')
 
 let config
 const devServer = {
-    port: 8011,
+    port: 8010,
     host: '0.0.0.0',
     overlay: {
         errors: true,
@@ -14,14 +14,14 @@ const devServer = {
 }
 const defaultPluins = [
     new webpack.DefinePlugin({
-        'process.env': {
-            NODE_ENV: 'development'
-        }
+        // 'process.env': {
+        //     NODE_ENV: 'production'
+        // }
     })
 ]
 
 config = merge(baseConfig, {
-    entry:path.join(__dirname,'../parctioce/index.js'),
+    entry: path.join(__dirname, '../parctice/index.js'),
     devtool: '#cheap-module-eval-source-map',
     module: {
         rules: [{
@@ -40,6 +40,12 @@ config = merge(baseConfig, {
         }]
     },
     devServer,
+    //important vue from 'vue'
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.esm.js'
+        }
+    },
     plugins: defaultPluins.concat([
         new webpack.HotModuleReplacementPlugin()
     ])

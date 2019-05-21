@@ -24,7 +24,6 @@ export default {
 
 <style lang="stylus" scoped>
 #app {
-  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -32,7 +31,7 @@ export default {
 }
 
 #cover {
-  position: absolute;
+  // position: absolute;
   left: 0;
   top: 0;
   right: 0;
