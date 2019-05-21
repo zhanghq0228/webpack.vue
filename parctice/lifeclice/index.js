@@ -30,9 +30,9 @@ const app = new Vue({
         console.log(this, 'destroyed')
     },
     render(h) {
-        // throw new TypeError('render err')
         // console.log(this,'render')
         return h('div',{},this.text)
+        throw new TypeError('render err')
     },
     template: '<div>conten  {{text}}</div>',
     renderError(h,err) {
