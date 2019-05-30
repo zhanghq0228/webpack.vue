@@ -2,7 +2,8 @@
   <div id="app">
     <div id="cover">
       <Header />
-      <Todo />
+      <router-view />
+      <!-- <Todo /> -->
       <Footer />
     </div>
   </div>
@@ -16,8 +17,7 @@ import Todo from "./views/todo/todo.vue";
 export default {
     components: {
         Header,
-        Footer,
-        Todo
+        Footer
     }
 };
 </script>

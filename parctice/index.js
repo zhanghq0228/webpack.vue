@@ -5,4 +5,10 @@
 //     template: "<div>this is content</div>"
 // })
 // import './instance/index'
-import './lifeclice/'
+// import './lifeclice/'
+// import './data-binding/'
+// import './comput/'
+// import './decative/'
+// import './component/'
+import './component/extend'
+
