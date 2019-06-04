@@ -23,11 +23,11 @@ export default {
     props: {
         filter: {
             type: String,
-            required: true,
+            required: true
         },
         todos: {
             type: Array,
-            required: true,
+            required: true
         }
     },
     data() {

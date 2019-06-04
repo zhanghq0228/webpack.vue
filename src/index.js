@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import App from './app.vue'
-import VueRouter from 'vue-router'
-import './assets/styles/global.styl'
-import createRoute from './config/router'
+import Vuex from 'vuex'
 
-Vue.use(VueRouter)
-const router = createRoute()
+import './assets/styles/global.styl'
+import createStore from './store/store'
+import router from './router'
+Vue.use(Vuex)
+const store = createStore()
 new Vue({
-    router,
-    el: '#root',
-    components: {App},
-    template: '<App/>'
-})
+  store,
+  router,
+  render: h => h(App)
+}).$mount('#root')

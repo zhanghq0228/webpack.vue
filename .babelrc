@@ -1,0 +1,9 @@
+{
+  "preset":[
+    "env"
+  ],
+  "plugins":[
+    "transform-vue-jsx",
+    "syntax-dynamic-import"
+  ]
+}

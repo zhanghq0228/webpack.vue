@@ -13,7 +13,10 @@ const devServer = {
     overlay: {
         errors: true,
     },
-    hot: true
+    hot: true,
+    historyApiFallback:{
+        index: '/index.html'
+    }
 }
 const defaultPluins = [
     new webpack.DefinePlugin({
