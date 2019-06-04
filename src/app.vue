@@ -2,7 +2,8 @@
   <div id="app">
     <div id="cover">
       <Header />
-      <div>{{ conter }}{{ fullName }} {{ textA }}</div>
+      {{ fullName }}{{ conter }}
+      <!-- <div>{{ conter }}{{ fullName }} {{ textA }} --{{textplue}} --{{textC}}</div> -->
       <router-link to="/login">
         login
       </router-link>
@@ -30,28 +31,32 @@ export default {
   },
   computed: {
     ...mapState({
-      conter: "count",
-      textA: state => state.a.text
+      conter: "count"
+      // textA: state => state.a.text,
+      // textC: state => state.c.text
     }),
     // count() {
     //     return this.$store.state.count
     // },
-    ...mapGetters(['fullName'])
+    ...mapGetters({
+      'fullName': 'fullName'
+    })
     // fullName() {
     //     return this.$store.getters.fullName
     // }
   },
   mounted() {
-    console.log(this.$store);
+    // console.log(this['a/textplue']);
     // let i = 1
-    // setInterval(()=>{
-    //     this.updateCount(i++)
-    // },1000)
-    this.upDateCountAsync({ num: 6, time: 2000 })
-    this['a/updateText'](12344)
+    // setInterval(() => {
+    //   this.updateCount(i++)
+    // }, 1000)
+    // this.upDateCountAsync({ num: 6, time: 2000 })
+    // this['a/updateText'](12344)
+    // this['a/add']()
   },
   methods: {
-    ...mapActions(['upDateCountAsync']),
+    // ...mapActions(['upDateCountAsync', 'a/add']),
     ...mapMutations(['updateCount', 'a/updateText'])
   }
 };

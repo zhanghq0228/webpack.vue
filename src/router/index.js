@@ -18,7 +18,11 @@ export default new Router({
       path: '/app',
       name: 'app',
       props: true,
-      component: () => import('../views/todo/todo.vue')
+      component: () => import('../views/todo/todo.vue'),
+      beforeEnter(to, from, next) {
+        console.log('beforeEnter')
+        next()
+      }
     }
   ]
 })
